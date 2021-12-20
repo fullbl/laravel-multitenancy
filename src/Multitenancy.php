@@ -2,7 +2,7 @@
 
 namespace Spatie\Multitenancy;
 
-use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Container\Container;
 use Spatie\Multitenancy\Actions\MakeQueueTenantAwareAction;
 use Spatie\Multitenancy\Concerns\UsesMultitenancyConfig;
 use Spatie\Multitenancy\Models\Concerns\UsesTenantModel;
@@ -15,7 +15,7 @@ class Multitenancy
     use UsesTenantModel;
     use UsesMultitenancyConfig;
 
-    public function __construct(public Application $app)
+    public function __construct(public Container $app)
     {
     }
 
